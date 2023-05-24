@@ -3,7 +3,27 @@
   --white: #fafafa;
   --blue: #133dc8;
   --red: #e21352;
-  --purple: purple;
+  --green: #006f3f;
+  --purple: #690069;
+}
+
+@font-face {
+  font-family: Mukta;
+  font-style: normal;
+  font-display: swap;
+  src: local('Mukta Regular'), local('Mukta-Regular'),
+    url(/fonts/mukta-latin-400.woff2) format('woff2'),
+    url(/fonts/mukta-latin-400.woff) format('woff');
+}
+
+@font-face {
+  font-family: Mukta;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local('Mukta Bold'), local('Mukta-Bold'),
+    url(/fonts/mukta-latin-700.woff2) format('woff2'),
+    url(/fonts/mukta-latin-700.woff) format('woff');
 }
 
 html {
@@ -36,11 +56,22 @@ a:visited {
   color: var(--purple);
 }
 
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
 body {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 button,
@@ -69,4 +100,217 @@ button {
   cursor: pointer;
   margin: 0.5rem 0;
   padding: 0.5rem;
+}
+
+header {
+  width: 100%;
+  overflow: hidden;
+}
+
+nav {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--blue);
+  font-size: 90%;
+  height: 18px;
+  line-height: 18px;
+  overflow: hidden;
+}
+
+ul.flat {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  white-space: nowrap;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a.more {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--blue);
+  font-weight: bold;
+  margin: 0;
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+  top: -0.1rem;
+}
+
+.flat li {
+  display: inline;
+}
+
+ul.sort li {
+  background-color: var(--white);
+  border: 0.1rem solid var(--blue);
+  border-right: 0;
+  padding: 0 1rem;
+}
+
+ul.sort li:last-child {
+  border-right: 0.1rem solid var(--blue);
+}
+
+ul.sort li.active {
+  background-color: var(--white);
+}
+
+ul.sort li.active a {
+  color: var(--red);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.1rem solid var(--blue);
+}
+
+header a.home,
+header a.subreddit {
+  margin-right: 1rem;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header ul.sort {
+  margin: 0.1rem;
+}
+
+nav ul li span {
+  margin: 0 0.3rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.link .upvotes {
+  margin-left: 2rem;
+  width: 2rem;
+}
+
+.link .entry .links,
+.link .entry .title {
+  align-items: center;
+  display: flex;
+}
+
+.flair {
+  background-color: var(--blue);
+  border-radius: 0.5rem;
+  color: var(--white);
+  height: 0.9rem;
+  margin: 0 0.1rem;
+  padding: 0 0.5rem;
+}
+
+.link .entry .title span {
+  font-size: small;
+}
+
+.link .upvotes span {
+  display: block;
+  text-align: center;
+}
+
+.link .image {
+  width: 6rem;
+}
+
+.link .image img {
+  max-width: 6rem;
+  max-height: 6rem;
+}
+
+.link .image a {
+  display: flex;
+  justify-content: center;
+}
+
+.link .image,
+.link .upvotes {
+  margin-right: 1rem;
+}
+
+.green {
+  color: var(--green);
+}
+
+.arrow {
+  margin: 0 auto;
+  background-image: url('/css/sprite.png');
+  background-position: -84px -1654px;
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 15px;
+}
+
+.arrow.down {
+  transform: rotate(180deg);
+}
+
+.no-image {
+  background-image: url('/css/sprite.png');
+  background-position: 0 -1267px;
+  height: 50px;
+  width: 70px;
+}
+
+.link .entry .meta p {
+  display: flex;
+}
+
+.link .entry .meta {
+  font-size: small;
+}
+
+.link .entry .meta a,
+.link .entry .meta span {
+  margin-left: 0.1rem;
+}
+
+details[open] {
+}
+
+.selftext {
+  border-radius: 0.4rem;
+  border: 0.1rem solid var(--blue);
+  padding: 1rem;
+  width: 50rem;
+  unicode-bidi: isolate;
+}
+
+details:not([open]) {
+  width: 1.5rem;
+}
+
+details {
+  margin: 0;
+  font-size: small;
+}
+
+details summary {
+  font-size: small;
+  list-style-type: none;
+  padding: 0.4rem 0;
+}
+
+details summary .line {
+  border: 0.08rem solid var(--blue);
+  margin-top: 0.1rem;
+  width: 1.2rem;
+}
+
+details summary .line:first-child {
+  margin-top: 0;
+}
+
+.preview {
+  min-width: 480px;
 }

@@ -17,6 +17,9 @@ services:
       test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost:8080/about"]
       interval: 1m
       timeout: 3s
+    volumes:
+      - ./src/static:/teddit/static
+      - ./src/views:/teddit/views
     depends_on:
       - teddit-redis
 

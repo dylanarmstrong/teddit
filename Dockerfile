@@ -11,7 +11,7 @@ RUN npm ci --omit=optional
 COPY src/ ./
 COPY config.js.template ./config.js
 
-RUN find ./static/ -type d -exec chmod -R 777 {} \;
+# RUN find ./static/ -type d -exec chmod -R 777 {} \;
 
 EXPOSE 8080
 
