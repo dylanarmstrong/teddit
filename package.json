@@ -13,15 +13,28 @@
       "url": "832ogRwuoSs2JGYg7wJTqshidK7dErgNdfpenQ9dzMghNXQTJRby1xGbqC3gW3GAifRM9E84J91VdMZRjoSJ32nkAZnaCEj"
     }
   ],
-  "main": "app.js",
+  "main": "./app.js",
   "repository": {
     "type": "git",
     "url": "https://codeberg.org/teddit/teddit"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "lint": "prettier --write --ignore-unknown src/ && eslint src/",
+    "start": "node ./app.js",
+    "dev": "nodemon ./src/app.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": "latest"
+    },
+    "extends": [
+      "prettier"
+    ]
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -36,6 +49,9 @@
     "redis": "^3.1.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.8"
   }
 }
